@@ -1,5 +1,58 @@
-header {
-   text-align: center; 
+/* リセットCSS */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    text-decoration: none;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+/* header */
+
+.header {
+   text-align: center;
+   padding: 0 25px;
 }
 
 
@@ -7,18 +60,12 @@ img {
     max-width: 100%;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+
 
 .header-logo img {
     width: 400px;
     margin: 30px auto; 
 }
-
-
 
 .top-wrapper img {
     width: 100%;
@@ -26,72 +73,226 @@ img {
     margin-bottom: 30px;
 }
 
-nav {
+
+/* menubar */
+
+.header-menu {
+    padding-top: 50px;
+}
+
+.header-menu ul {
+    text-decoration: none;
+}
+
+.u-nav {
+    display: flex;
     text-align: center;
 }
 
-nav ul li {
-    list-style: none;
-    display: inline;
-}
 
-nav li a {
+ul .h-nav-a {
 padding: 15px 30px;
-text-decoration: none;
 color: #666;
 transition: 0.3s;
 font-size: 17px;
-text-align: center;
+
 
 }
 
-nav li a:hover {
+ul .h-nav-a:hover {
     color: #CD853F;
     border-bottom: 3px solid#CD853F;
     padding-bottom: 7px;
+    text-decoration: none;
 }
 
-.headline {
-　　 width: 95%;
+.h-menu {
+    display: none;
+}
+
+
+/* main */
+
+main {
+    padding: 50px 40px;
+}
+
+.container {
+    margin: 0em;
+}
+
+.col-xs-12.col-md-12.headline {
+    width: 100%;
     text-align: left;
-    padding-top: 20px;
+    padding: 0;
 }
 
 
 
-h3 {
+.m-title {
     background-color: #CD853F;
-    padding: 15px;
+    padding: 20px 15px;
     color: white;
     border-radius: 10px;
     font-weight: normal;
     font-size: 16px;
-    
+    margin: 30px 0;
 }
 
-p {
+.p-work {
     color: #808080;
     margin-left: 15px;
     font-size: 16px;
+    line-height: 2;
 }
 
 .law h3 {
-    background-color: white;
-    color: #808080;
-    border: 1px solid #808080;
-    padding: 12px;
+    border: 1px solid #CCCCCC;
+    padding: 20px 15px;
 }
 
-.underline {
-    text-decoration: underline;
+.law-content {
+    padding: 0 25px;
 }
 
-.brown {
+#m-info {
+    padding-left: 25px;
+}
+
+
+/* footer */
+
+.footer {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+footer p {
+    text-align: center;
+}
+
+.f-copy {
+    font-size: 13px;
+    padding: 10px;
+}
+
+.f-maker {
+    font-size: 12px;
+}
+
+.f-sample {
+    color: #666666;
+}
+
+.f-sample:hover {
     color: #CD853F;
 }
 
 
-footer p {
+
+
+
+
+
+
+@media screen and (max-width:780px) {
+  
+  
+    /* header */
+    .header {
+       padding: 0;
+   }
+
+   .header-logo img {
+       width: 200px;
+       text-align: left;
+       
+   }
+
+   .h-menu {
+       display: block;
+       color: #fff;
+       background-color: #ffffff;
+       border-color: #fff;
+   }
+   
+    /* menubar */
+     .header-menu {
+         display: none;
+     }
+
+
+    /* main */
+     main {
+         padding: 0 15px;
+     }
+
+     .p-work {
+         font-size: 12px;
+         padding-bottom: 10px;
+     }
+
+     .law-content {
+         line-height: 2;
+     }
+
+     .footer {
+         margin: 50px 0;
+     }
+
+
+  /* スマホメニューバー */   
+
+     /* アニメーション前のメニューの状態 */
+    .menu{
+        transform: translateX(100vw);
+        transition: all .3s linear;
+    }
+  /* アニメーション後のメニューの状態 */
+    .menu.is-active{
+        transform: translateX(0);
+  }
+
+  .menu-btn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    color: #000000;
+  }
+  
+  /*----------------------------
+  * メニュー本体
+  *----------------------------*/
+  .menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+  }
+  .menu__item{
+    width: 100%;
+    height: auto;
+    padding: 50px;
     text-align: center;
-    font-size: 12px;
-}
+    background-color: #000000;
+
+    color: #fff;
+    box-sizing: border-box;
+  }
+  
+    
+    }
